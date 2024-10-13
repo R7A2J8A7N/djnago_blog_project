@@ -1,0 +1,243 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+   
+    <link rel="stylesheet" href="{% static '../static/myapp/style.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>MOSH - Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  
+</head>
+<body class=" bg-gray-800 text-white">
+	 <header id="header" class="sticky top-0 bg-gray-800 z-50">
+        <nav class="container mx-auto flex justify-between items-center py-4 px-6">
+            
+            <!-- Left: Logo -->
+            <div class="flex items-center">
+                <img src="{% static "../static/images/plan4.jpg"%}" alt="Website Logo" class="w-12 h-12 rounded-full mr-3"> <!-- Add your logo URL here -->
+                <div class="text-3xl font-bold text-yellow-400">My Website</div>
+            </div>
+
+            <!-- Right: Menu Items, Search Button, and Profile Image -->
+            <div class="flex items-center space-x-6">
+                <!-- Center: Menu Items moved to the right side -->
+                <ul class="flex space-x-8 items-center">
+                    <li><a href="#home" class="text-gray-300 hover:text-yellow-400 underline-animation"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                    <li><a href="#about" class="text-gray-300 hover:text-yellow-400 underline-animation">About</a></li>
+                    <li class="relative dropdown">
+                        <a href="#categories" class="text-gray-300 hover:text-yellow-400 underline-animation flex items-center">Categories
+                           
+                        </a>
+                        <!-- Dropdown Menu for Categories -->
+                        <ul class="dropdown-menu mt-2 w-40 rounded-lg bg-gray-700 text-gray-300">
+                            <li><a href="#" class="flex items-center px-4 py-2 hover:bg-gray-600"><i class="fab fa-html5"> </i> HTML</a></li>
+                            <li><a href="#" class="flex items-center px-4 py-2 hover:bg-gray-600"><i class="fab fa-css3"> </i> CSS</a></li>
+                            <li><a href="#" class="flex items-center px-4 py-2 hover:bg-gray-600"><i class="fa-brands fa-js"> </i> JavaScript</a></li>
+                        </ul>
+                    </li>
+                    <!-- New Post Item -->
+                    <li><a href="#post" class="text-gray-300 hover:text-yellow-400 underline-animation">Post</a></li>
+                </ul>
+
+                <!-- Search Button -->
+                <div class="relative">
+                    <input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 rounded-lg bg-gray-700 text-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+                    
+                </div>
+
+                <!-- Profile Dropdown -->
+                <div class="relative dropdown">
+                    <img src="{% static "../static/images/plan4.jpg"%}" alt="Profile Image" class="w-10 h-10 rounded-full border-2 border-gray-300 hover:border-yellow-400 cursor-pointer"> <!-- Profile image URL here -->
+                    <!-- Dropdown Menu for Profile -->
+                    <ul class="dropdown-menu profile-dropdown-menu mt-2 w-48 rounded-lg bg-gray-700 text-gray-300">
+                        <li><a href="#" class="flex items-center block px-4 py-2 hover:bg-gray-600">  <i class="fa-regular fa-user">  </i>  Profile</a></li>
+                        <li><a href="#" class="flex items-center block px-4 py-2 hover:bg-gray-600"><i class="fa-regular fa-gear"></i> settings</a></li>
+                        <li><a href="#" class="flex items-center block px-4 py-2 hover:bg-gray-600"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Background Change -->
+    <div class="bg-hero flex items-center justify-center">
+        <div class="bg-gray-900 bg-opacity-75 p-6 rounded-lg text-center">
+            <h2 class="text-3xl font-bold">Welcome to MOSH Blog</h2>
+            <p class="mt-2">Your source for the latest insights and trends.</p>
+            <a href="#" class="mt-4 inline-block bg-yellow-400 text-gray-800 px-4 py-2 rounded-lg hover:bg-yellow-500 transition duration-300">Get Started</a>
+        </div>
+    </div>
+
+    <!-- Keywords Section -->
+    <section class="bg-gray-900 py-6 mt-10">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold mb-4 text-center">Keywords Related to Our Posts</h2>
+            <div class="flex justify-center flex-wrap">
+                <div class="bg-gray-800 rounded-full px-4 py-2 mx-2 my-2 text-yellow-400 cursor-pointer hover:bg-gray-700 transition duration-300">Web Development</div>
+                <div class="bg-gray-800 rounded-full px-4 py-2 mx-2 my-2 text-yellow-400 cursor-pointer hover:bg-gray-700 transition duration-300">Mobile Apps</div>
+                <div class="bg-gray-800 rounded-full px-4 py-2 mx-2 my-2 text-yellow-400 cursor-pointer hover:bg-gray-700 transition duration-300">E-commerce</div>
+                <div class="bg-gray-800 rounded-full px-4 py-2 mx-2 my-2 text-yellow-400 cursor-pointer hover:bg-gray-700 transition duration-300">Digital Marketing</div>
+                <div class="bg-gray-800 rounded-full px-4 py-2 mx-2 my-2 text-yellow-400 cursor-pointer hover:bg-gray-700 transition duration-300">Finance Tips</div>
+                <div class="bg-gray-800 rounded-full px-4 py-2 mx-2 my-2 text-yellow-400 cursor-pointer hover:bg-gray-700 transition duration-300">Business Strategies</div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-4 py-10 flex flex-col md:flex-row" style="padding: 25px 50px 40px 50px;">
+        <div class="w-full md:w-3/4 lg:w-3/4 pr-4">
+            <h2 class="text-3xl font-bold mb-8">Latest Posts</h2>
+
+            <!-- Search Box -->
+            <div class="mb-6">
+                <input type="text" placeholder="Search latest posts..." class="w-full p-2 rounded-lg bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-yellow-400">
+            </div>
+
+            <!-- Card Post Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Post 1 -->
+                <div class="relative bg-gray-900 rounded-lg overflow-hidden shadow-lg">
+                    <div class="absolute top-2 left-2 bg-yellow-400 text-gray-800 text-xs font-bold px-2 py-1 rounded">New</div>              
+                    <img src="{% static '../static/images/plant23.jpg' %}" alt="My Image" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <div class="mt-4">
+                            <span class="text-sm text-gray-400">Tags:</span>
+                            <span class="bg-gray-800 text-yellow-400 rounded-full px-2 py-1 text-xs mx-1">CSS</span>
+                            <span class="bg-gray-800 text-yellow-400 rounded-full px-2 py-1 text-xs mx-1">Web Development</span>
+                        </div>
+                        <p class="text-gray-500 text-sm mt-2">By <strong>Author Name</strong> | Published on <strong>October 4, 2024</strong></p>
+                        <h3 class="text-xl font-semibold mb-2">Mastering CSS Flexbox</h3>
+                        <p class="text-gray-300 mb-4">Flexbox is a layout model that allows you to design a complex layout structure in a more efficient and predictable way...</p>
+                        <a href="#" class="text-yellow-400 hover:text-yellow-500 transition duration-300">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Repeat for other posts -->
+                <div class="relative bg-gray-900 rounded-lg overflow-hidden shadow-lg">
+                    <div class="absolute top-2 left-2 bg-yellow-400 text-gray-800 text-xs font-bold px-2 py-1 rounded">New</div>              
+                    <img src="{% static '../static/images/plant22.jpg' %}" alt="My Image" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <div class="mt-4">
+                            <span class="text-sm text-gray-400">Tags:</span>
+                            <span class="bg-gray-800 text-yellow-400 rounded-full px-2 py-1 text-xs mx-1">JavaScript</span>
+                            <span class="bg-gray-800 text-yellow-400 rounded-full px-2 py-1 text-xs mx-1">Web Development</span>
+                        </div>
+                        <p class="text-gray-500 text-sm mt-2">By <strong>Author Name</strong> | Published on <strong>October 4, 2024</strong></p>
+                        <h3 class="text-xl font-semibold mb-2">Understanding JavaScript Closures</h3>
+                        <p class="text-gray-300 mb-4">Closures are a powerful feature of JavaScript that allows you to create private variables and functions...</p>
+                        <a href="#" class="text-yellow-400 hover:text-yellow-500 transition duration-300">Read More</a>
+                    </div>
+                </div>
+
+                <div class="relative bg-gray-900 rounded-lg overflow-hidden shadow-lg">
+                    <div class="absolute top-2 left-2 bg-yellow-400 text-gray-800 text-xs font-bold px-2 py-1 rounded">New</div>              
+                    <img src="{% static '../static/images/plant24.jpg' %}" alt="My Image" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <div class="mt-4">
+                            <span class="text-sm text-gray-400">Tags:</span>
+                            <span class="bg-gray-800 text-yellow-400 rounded-full px-2 py-1 text-xs mx-1">SEO</span>
+                            <span class="bg-gray-800 text-yellow-400 rounded-full px-2 py-1 text-xs mx-1">Digital Marketing</span>
+                        </div>
+                        <p class="text-gray-500 text-sm mt-2">By <strong>Author Name</strong> | Published on <strong>October 4, 2024</strong></p>
+                        <h3 class="text-xl font-semibold mb-2">SEO Best Practices for 2024</h3>
+                        <p class="text-gray-300 mb-4">Stay ahead of the curve with these essential SEO practices for improving your website's visibility...</p>
+                        <a href="#" class="text-yellow-400 hover:text-yellow-500 transition duration-300">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Aside: Popular Posts -->
+        <aside class="w-full md:w-1/4 lg:w-1/4 mt-8 md:mt-0 bg-gray-900 rounded-lg p-6">
+            <h3 class="text-2xl font-bold mb-6">Popular Posts</h3>
+            <ul>
+                <li class="border-b border-gray-700 pb-2 mb-2">
+                    <a href="#" class="text-yellow-400 hover:text-yellow-500 transition duration-300">10 Tips for Web Design</a>
+                    <p class="text-gray-400 text-sm">By Author | 20th Sept, 2024</p>
+                </li>
+                <li class="border-b border-gray-700 pb-2 mb-2">
+                    <a href="#" class="text-yellow-400 hover:text-yellow-500 transition duration-300">Understanding Tailwind CSS</a>
+                    <p class="text-gray-400 text-sm">By Author | 15th Sept, 2024</p>
+                </li>
+                <li class="border-b border-gray-700 pb-2 mb-2">
+                    <a href="#" class="text-yellow-400 hover:text-yellow-500 transition duration-300">JavaScript ES6 Features</a>
+                    <p class="text-gray-400 text-sm">By Author | 10th Sept, 2024</p>
+                </li>
+                <li class="border-b border-gray-700 pb-2 mb-2">
+                    <a href="#" class="text-yellow-400 hover:text-yellow-500 transition duration-300">Creating Responsive Layouts</a>
+                    <p class="text-gray-400 text-sm">By Author | 5th Sept, 2024</p>
+                </li>
+                <li class="border-b border-gray-700 pb-2 mb-2">
+                    <a href="#" class="text-yellow-400 hover:text-yellow-500 transition duration-300">Advanced CSS Techniques</a>
+                    <p class="text-gray-400 text-sm">By Author | 1st Sept, 2024</p>
+                </li>
+            </ul>
+           
+        </aside>
+      
+    </main>
+
+    <!-- Footer Section -->
+    <footer id="contact" class="bg-gray-900 text-white py-12" style="padding: 50px 50px 40px 50px;">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 px-4">
+            <div>
+                <h3 class="text-2xl font-bold mb-4">MOSH</h3>
+                <p class="text-gray-300">Providing innovative solutions for a digital world.</p>
+            </div>
+            <div>
+                <h4 class="text-xl font-semibold mb-4">Fast Links</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="hover:text-yellow-400 transition duration-300">About Us</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition duration-300">Services</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition duration-300">Features</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xl font-semibold mb-4">Blog</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="hover:text-yellow-400 transition duration-300">Latest Trends</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition duration-300">Tutorials</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition duration-300">Tips & Tricks</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xl font-semibold mb-4">Contact Us</h4>
+                <p class="text-gray-400">Email: contact@mosh.com</p>
+                <p class="text-gray-400">Phone: +1 (234) 567-890</p>
+                <div class="flex space-x-4 mt-4">
+                    <a href="#" class="text-yellow-400 hover:text-yellow-500 transition duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-yellow-400 hover:text-yellow-500 transition duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-yellow-400 hover:text-yellow-500 transition duration-300">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-yellow-400 hover:text-yellow-500 transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="mt-8 text-center text-gray-400">
+            <p>&copy; 2024 MOSH. All rights reserved.</p>
+            <div class="mt-4">
+                <a href="#" class="text-yellow-400 hover:text-yellow-300">Facebook</a>
+                <a href="#" class="text-yellow-400 hover:text-yellow-300 ml-4">Twitter</a>
+                <a href="#" class="text-yellow-400 hover:text-yellow-300 ml-4">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+    <script src="{% static '../static/myapp/script.js' %}">
+    
+
+</script>
+</body>
+</html>

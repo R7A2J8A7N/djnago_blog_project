@@ -1,0 +1,72 @@
+    
+.hidden { display: none; }
+.dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu { 
+    display: none; 
+    position: absolute; 
+    background-color: #1F2937; 
+    z-index: 50; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added box shadow */
+    border-radius: 0.5rem; /* Rounded corners */
+}
+.dropdown-menu li { border-bottom: 1px solid #4B5563; } /* Adds separator between dropdown items */
+.dropdown-menu li:last-child { border-bottom: none; } /* Removes the separator from the last item */
+.dropdown a:hover { color: #FBBF24; }
+.underline-animation {
+    position: relative;
+}
+.underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #FBBF24;
+    transition: width 0.3s ease-in-out;
+}
+.underline-animation:hover::after {
+    width: 100%;
+}
+.profile-dropdown-menu {
+    top: 100%;
+    right: 0;
+}
+.search-dropdown-menu {
+    top: 100%;
+    right: 0;
+}
+#header {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Added box shadow at the bottom */
+}
+
+
+.bg-hero {
+background-image: url("../images/plant23.jpg");
+background-size: cover;
+background-position: center;
+height: 60vh;
+position: relative;
+animation: bgChange 10s infinite alternate;
+border-radius: 6px;
+margin: 15px;
+}
+
+@keyframes bgChange {
+0% {
+background-image: url('../images/plan10.jpg');
+}
+50% {
+background-image: url('../images/plan2.jpg');
+}
+100% {
+background-image: url('../images/plant10.jpg');
+}
+}
+
+/* Header Styles */
+header {
+background-color: #1F2937; /* Gray-800 */
+}
+
+
